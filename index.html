@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Golla Veeresh - Futuristic Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      display: flex;
+      flex-wrap: wrap;
+      overflow-x: hidden;
+    }
+
+    /* Floating particles */
+    .particles {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+    .particle {
+      position: absolute;
+      background: #00e0ff;
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: floatUp 15s linear infinite;
+    }
+    @keyframes floatUp {
+      from { transform: translateY(100vh); }
+      to { transform: translateY(-10vh); }
+    }
+
+    /* Sidebar */
+    .sidebar {
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(12px);
+      width: 280px;
+      min-height: 100vh;
+      padding: 30px 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      box-shadow: 5px 0 25px rgba(0,0,0,0.8);
+      animation: slideInLeft 1.2s ease;
+    }
+
+    .sidebar img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto 20px;
+      border: 4px solid #00b4d8;
+      box-shadow: 0 0 30px #00b4d8;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+    .sidebar img:hover {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 0 45px #48cae4;
+    }
+
+    .sidebar h1 {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 5px;
+      background: linear-gradient(90deg, #00b4d8, #48cae4, #90e0ef);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Typing effect */
+    .typing {
+      text-align: center;
+      font-size: 14px;
+      color: #bbb;
+      margin-bottom: 20px;
+      border-right: 2px solid #00e0ff;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 5s steps(30, end) infinite alternate;
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    .sidebar a {
+      color: #00b4d8;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .sidebar a:hover {
+      color: #90e0ef;
+    }
+
+    /* Main */
+    .main {
+      margin-left: 280px;
+      padding: 40px;
+      max-width: 900px;
+    }
+
+    /* Colorful containers */
+    .section-container {
+      background: linear-gradient(135deg, rgba(0,180,216,0.15), rgba(144,224,239,0.1));
+      border: 2px solid rgba(0,224,255,0.6);
+      border-radius: 15px;
+      padding: 25px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 25px rgba(0,224,255,0.2);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .section-container:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 0 35px rgba(0,224,255,0.6);
+    }
+
+    /* Title style */
+    h2 {
+      margin-bottom: 15px;
+      color: #00e0ff;
+      text-shadow: 0 0 10px #00e0ff;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      padding: 8px 0;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+    ul li:hover {
+      transform: translateX(12px) scale(1.05);
+      color: #00e0ff;
+      text-shadow: 0 0 8px #00e0ff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    /* Scroll Animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Animations */
+    @keyframes slideInLeft {
+      from { transform: translateX(-100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .sidebar {
+        position: relative;
+        width: 100%;
+        min-height: auto;
+        text-align: center;
+      }
+      .main {
+        margin-left: 0;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Particle Background -->
+  <div class="particles"></div>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <img src="profile pic.jpg" alt="Profile Photo">
+    <h1>Golla Veeresh</h1>
+    <p class="typing">Python | C/C++ | HTML & CSS | Core JAVA</p>
+
+    <div class="info">
+      <p><b>Email:</b><br><a href="mailto:gollaveeresh37@gmail.com">gollaveeresh37@gmail.com</a></p>
+      <p><b>Phone:</b><br><a href="tel:+91705497091">7075497091</a></p>
+      <p><b>Location:</b><br>Karvanpet, Adoni</p>
+      <p><b>LinkedIn:</b><br>
+        <a href="https://www.linkedin.com/in/golla-veeresh-774329336" target="_blank">View Profile</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="main">
+    <section class="reveal section-container"><h2>About Me</h2>
+      <p>Seeking a position in marketing with opportunities for growth and development. Passionate about programming, data analysis, and learning new technologies.</p>
+    </section>
+
+    <section class="reveal section-container"><h2>Skills</h2>
+      <ul><li>Python</li><li>C / C++</li><li>Basic HTML & CSS</li><li>Core JAVA</li></ul>
+    </section>
+
+    <section class="reveal section-container"><h2>Languages</h2>
+      <ul><li>English</li><li>Telugu</li></ul>
+    </section>
+
+    <section class="reveal section-container"><h2>Education</h2>
+      <ul>
+        <li>SSC – Nehru Memorial Municipal High School, Adoni (2022)</li>
+        <li>Intermediate – The Adoni Arts and Science College, Adoni</li>
+      </ul>
+    </section>
+
+    <section class="reveal section-container"><h2>Certificates</h2>
+      <ul>
+        <li>Programming Foundations: Beyond the Fundamentals</li>
+        <li>Introduction to Career Skills in Software Development</li>
+        <li>SkillDzire</li>
+        <li>AI Data Quality Analyst</li>
+        <li>ISRO Geographical</li>
+        <li>ISRO Remote Sensing and Image Analysis</li>
+      </ul>
+    </section>
+
+    <section class="reveal section-container"><h2>Projects</h2>
+      <ul>
+        <li><b>Student Management System</b> – A Python + MySQL project to manage student records.</li>
+        <li><b>Portfolio Website</b> – A responsive portfolio built with HTML, CSS.</li>
+        <li><b>Library Management (Java)</b> – Core Java project to manage book records.</li>
+      </ul>
+    </section>
+
+    <footer class="reveal">
+      <p>&copy; 2025 Golla Veeresh | Portfolio</p>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    /* Scroll animation */
+    const reveals = document.querySelectorAll(".reveal");
+    function revealOnScroll() {
+      for (let i = 0; i < reveals.length; i++) {
+        let windowHeight = window.innerHeight;
+        let elementTop = reveals[i].getBoundingClientRect().top;
+        if (elementTop < windowHeight - 100) {
+          reveals[i].classList.add("active");
+        }
+      }
+    }
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll();
+
+    /* Create floating particles */
+    const particlesContainer = document.querySelector(".particles");
+    for (let i = 0; i < 40; i++) {
+      let p = document.createElement("span");
+      p.classList.add("particle");
+      let size = Math.random() * 6 + 4;
+      p.style.width = size + "px";
+      p.style.height = size + "px";
+      p.style.left = Math.random() * window.innerWidth + "px";
+      p.style.animationDuration = (10 + Math.random() * 20) + "s";
+      particlesContainer.appendChild(p);
+    }
+  </script>
+</body>
+</html>
